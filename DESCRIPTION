@@ -1,0 +1,20 @@
+Package: AshkenazimSonChr21
+Type: Package
+Title: Annotated variants on the chromosome 21, human genome 19,
+        Ashkenazim Trio son sample
+Version: 0.99.3
+Date: 2015-04-20
+Author: Tomasz Stokowy
+Maintainer: Who to complain to <tomasz.stokowy@k2.uib.no>
+Description: SonVariantsChr21 is a dataset of annotated genomic
+        variants coming from Complete Genomics whole genome sequencing.
+        Data comes from GIAB project, Ashkenazim Trio, sample HG002 run
+        1. Both vcf and annotated data frame are provided.
+https:
+        //sites.stanford.edu/abms/content/giab-reference-materials-and-data
+License: Artistic-2.0
+LazyData: TRUE
+Suggests: knitr, VariantAnnotation, RareVariantVis
+VignetteBuilder: knitr
+biocViews: GenomicVariation, Sequencing, WholeGenome
+NeedsCompilation: no

@@ -1,0 +1,42 @@
+\documentclass[a4paper]{article}
+
+\usepackage{listings}
+\usepackage{inconsolata}
+
+\title{AshkenazimSonChr21: Annotated variants on the chromosome 21, human genome 19, Ashkenazim Trio son sample}
+\author{Tomasz Stokowy}
+
+%\VignetteIndexEntry{RareVariantVis}
+%\VignetteEngine{knitr::knitr}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+This vignette describes AshkenazimSonChr21 dataset, example input for RareVariantVis package. This dataset is CompleteGenomics whole genome sequencing dataset, coming from Stanford Genome in a Bottle Consortium. This dataset was made fully available for public, without restrictions. This particular data refer to sample HG002- NA24385 - huAA53E0 (son). Original data can be found at:
+https://sites.stanford.edu/abms/content/giab-reference-materials-and-data
+
+\section*{Preprocessing}
+Original whole genome sequencing sample was (HG002-son) was too big for purpose of R/Bioconductor test data, therefore only chromosome 21 variants were slected. Complete Genomics output provides 3 types of variants: homozygous reference, heterozygous and homozygous alternative. To minimize data size and make it similar to Illumina X Ten output homozygous reference were excluded. Finally, small indels were filtered out, since they introduced a lot of noise into visualization. This noise was not observed in Illumina X Ten samples that we analyzed in our laboratory.
+
+\section*{Possible usage of data}
+Data aims to work well with RareVariantVis package, however it can be used also in other packages that aim for whole genome sequencing data analysis. Dataset includes two types of files: txt file with rare variants and vcf file obtained from sequencing, very similar to one from Illumina X Ten output. Examples of data usage and file structure are listed below.
+
+<<mychunk1, cache=TRUE, eval=TRUE, hide=TRUE>>=
+## text file
+library(AshkenazimSonChr21)
+head(SonVariantsChr21)
+
+## vcf file
+library(VariantAnnotation)
+
+fl <- system.file("extdata", "SonVariantsChr21.vcf.gz",
+                  package="AshkenazimSonChr21")
+vcf <- readVcf(fl, genome="hg19")
+geno(vcf)
+info(vcf)
+@
+
+
+\end{document}
