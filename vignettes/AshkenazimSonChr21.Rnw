@@ -1,7 +1,6 @@
 \documentclass[a4paper]{article}
 
 \usepackage{listings}
-\usepackage{inconsolata}
 
 \title{AshkenazimSonChr21: Annotated variants on the chromosome 21, human genome 19, Ashkenazim Trio son sample}
 \author{Tomasz Stokowy}
