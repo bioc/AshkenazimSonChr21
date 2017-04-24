@@ -2,7 +2,7 @@ Package: AshkenazimSonChr21
 Type: Package
 Title: Annotated variants on the chromosome 21, human genome 19,
         Ashkenazim Trio son sample
-Version: 1.6.0
+Version: 1.7.0
 Date: 2015-04-20
 Author: Tomasz Stokowy
 Maintainer: Who to complain to <tomasz.stokowy@k2.uib.no>
